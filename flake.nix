@@ -15,13 +15,13 @@
     };
   };
   outputs =
-    {
+    inputs@{
       nixpkgs,
       fleet,
       flake-parts,
       pjnvim,
       ...
-    }@inputs:
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ fleet.flakeModules.default ];
       systems = [ "x86_64-linux" ];
