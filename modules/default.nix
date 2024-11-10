@@ -1,0 +1,24 @@
+{
+  imports = [
+    ./nix
+    ./hardware
+    ./security
+    ./git
+    ./direnv
+    ./users
+    ./fonts
+    ./shell
+    ./localization
+    ./printing
+    ./messaging
+    ./networking
+    ./ssh
+    ./essentials
+    ./desktop
+    ./sound
+    ./media
+    ./development
+    ./virtualisation
+    ./work
+  ];
+}
