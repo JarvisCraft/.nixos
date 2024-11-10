@@ -14,37 +14,27 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs =
-    inputs@{
-      nixpkgs,
-      fleet,
-      flake-parts,
-      pjnvim,
-      ...
-    }:
+  outputs = inputs@{ nixpkgs, fleet, flake-parts, pjnvim, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ fleet.flakeModules.default ];
       systems = [ "x86_64-linux" ];
 
-      perSystem =
-        { pkgs, system, ... }:
-        {
-          # _module.args.pkgs = import nixpkgs { inherit system; };
-          formatter = pkgs.nixfmt-rfc-style;
-          devShells.default = pkgs.mkShell { packages = [ fleet.packages.${system}.fleet ]; };
-        };
+      perSystem = { pkgs, system, ... }: {
+        # _module.args.pkgs = import nixpkgs { inherit system; };
+        formatter = pkgs.nixfmt-rfc-style;
+        devShells.default =
+          pkgs.mkShell { packages = [ fleet.packages.${system}.fleet ]; };
+      };
 
       fleetConfigurations.default = {
         nixpkgs.buildUsing = nixpkgs;
 
         nixos.imports = [
           ./modules
-          (
-            { config, ... }:
-            {
-              environment.systemPackages = [ pjnvim.packages.${config.nixpkgs.system}.nvim ];
-            }
-          )
+          ({ config, ... }: {
+            environment.systemPackages =
+              [ pjnvim.packages.${config.nixpkgs.system}.nvim ];
+          })
           {
             nix.registry.nixpkgs = {
               from = {
@@ -57,9 +47,15 @@
           }
         ];
 
-        hosts.pc-1 = {
-          system = "x86_64-linux";
-          nixos.imports = [ ./hosts/pc-1/configuration.nix ];
+        hosts = {
+          pc-1 = {
+            system = "x86_64-linux";
+            nixos.imports = [ ./hosts/pc-1/configuration.nix ];
+          };
+          laptop-t14-g1 = {
+            system = "x86_64-linux";
+            nixos.imports = [ ./hosts/laptop-t14-g1/configuration.nix ];
+          };
         };
       };
     };
