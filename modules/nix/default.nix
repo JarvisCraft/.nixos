@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   imports = [ ./unfree.nix ];
   nix.settings = {
     sync-before-registering = true;
@@ -14,4 +14,5 @@
     ];
     use-cgroups = true;
   };
+  nix.package = pkgs.nixVersions.nix_2_24;
 }
