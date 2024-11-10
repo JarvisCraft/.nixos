@@ -1,50 +1,66 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    flake-utils.url = "github:numtide/flake-utils";
-    pjnvim = {
-      url = "github:JarvisCraft/pjnvim";
+    flake-parts.url = "github:hercules-ci/flake-parts";
+    fleet = {
+      url = "github:CertainLach/fleet";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
+        flake-parts.follows = "flake-parts";
       };
+    };
+    pjnvim = {
+      url = "github:JarvisCraft/pjnvim";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
   outputs =
     {
       nixpkgs,
-      flake-utils,
+      fleet,
+      flake-parts,
       pjnvim,
       ...
-    }:
-    let
-      commonModules = [
-        ./modules
-        (
-          { config, ... }:
+    }@inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = [ fleet.flakeModules.default ];
+      systems = [ "x86_64-linux" ];
+
+      perSystem =
+        { pkgs, system, ... }:
+        {
+          # _module.args.pkgs = import nixpkgs { inherit system; };
+          formatter = pkgs.nixfmt-rfc-style;
+          devShells.default = pkgs.mkShell { packages = [ fleet.packages.${system}.fleet ]; };
+        };
+
+      fleetConfigurations.default = {
+        nixpkgs.buildUsing = nixpkgs;
+
+        nixos.imports = [
+          ./modules
+          (
+            { config, ... }:
+            {
+              environment.systemPackages = [ pjnvim.packages.${config.nixpkgs.system}.nvim ];
+            }
+          )
           {
-            environment.systemPackages = [ pjnvim.packages.${config.nixpkgs.system}.nvim ];
+            nix.registry.nixpkgs = {
+              from = {
+                id = "nixpkgs";
+                type = "indirect";
+              };
+              flake = nixpkgs;
+              exact = false;
+            };
           }
-        )
-      ];
-      modules = {
-        pc-1 = commonModules ++ [ ./hosts/pc-1/configuration.nix ];
+        ];
+
+        hosts.pc-1 = {
+          system = "x86_64-linux";
+          nixos.imports = [ ./hosts/pc-1/configuration.nix ];
+        };
       };
-    in
-    {
-      nixosConfigurations.pc-1 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = modules.pc-1;
-      };
-    }
-    // flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
-        devShells.default = pkgs.mkShell { };
-        formatter = pkgs.nixfmt-rfc-style;
-      }
-    );
+    };
 }
