@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     flake-parts.url = "github:hercules-ci/flake-parts";
     fleet = {
       url = "github:CertainLach/fleet";
@@ -14,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ nixpkgs, fleet, flake-parts, pjnvim, ... }:
+  outputs = inputs@{ nixpkgs, nixos-hardware, flake-parts, fleet, pjnvim, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ fleet.flakeModules.default ];
       systems = [ "x86_64-linux" ];
@@ -48,7 +49,10 @@
           };
           laptop-t14-g1 = {
             system = "x86_64-linux";
-            nixos.imports = [ ./hosts/laptop-t14-g1/configuration.nix ];
+            nixos.imports = [
+              ./hosts/laptop-t14-g1/configuration.nix
+              nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
+            ];
           };
         };
       };
