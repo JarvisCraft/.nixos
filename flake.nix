@@ -19,33 +19,27 @@
       imports = [ fleet.flakeModules.default ];
       systems = [ "x86_64-linux" ];
 
-      perSystem = { pkgs, system, ... }: {
-        # _module.args.pkgs = import nixpkgs { inherit system; };
+      perSystem = { pkgs, system, inputs', ... }: {
         formatter = pkgs.nixfmt-rfc-style;
         devShells.default =
-          pkgs.mkShell { packages = [ fleet.packages.${system}.fleet ]; };
+          pkgs.mkShell { packages = [ inputs'.fleet.packages.fleet ]; };
       };
 
       fleetConfigurations.default = {
         nixpkgs.buildUsing = nixpkgs;
 
-        nixos.imports = [
-          ./modules
-          ({ config, ... }: {
-            environment.systemPackages =
-              [ pjnvim.packages.${config.nixpkgs.system}.nvim ];
-          })
-          {
-            nix.registry.nixpkgs = {
-              from = {
-                id = "nixpkgs";
-                type = "indirect";
-              };
-              flake = nixpkgs;
-              exact = false;
+        nixos = { inputs, inputs', ... }: {
+          imports = [ ./modules ];
+          environment.systemPackages = [ inputs'.pjnvim.packages.nvim ];
+          nix.registry.nixpkgs = {
+            from = {
+              id = "nixpkgs";
+              type = "indirect";
             };
-          }
-        ];
+            flake = inputs.nixpkgs;
+            exact = false;
+          };
+        };
 
         hosts = {
           pc-1 = {
