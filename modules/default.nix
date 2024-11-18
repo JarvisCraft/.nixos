@@ -15,6 +15,7 @@
     ./ssh
     ./essentials
     ./desktop
+    ./controls
     ./sound
     ./media
     ./development
