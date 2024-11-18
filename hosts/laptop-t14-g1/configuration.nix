@@ -1,5 +1,8 @@
 {
-  imports = [ ./hardware-configuration.nix ./bluetooth.nix ];
+  imports = [
+    ./hardware-configuration.nix
+    ./bluetooth.nix
+  ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

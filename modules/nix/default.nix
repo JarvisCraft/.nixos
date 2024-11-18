@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [ ./unfree.nix ];
   nix.settings = {
     sync-before-registering = true;
