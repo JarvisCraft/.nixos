@@ -48,7 +48,8 @@
         hosts = {
           pc-1 = {
             system = "x86_64-linux";
-            nixos.imports = [ ./hosts/pc-1/configuration.nix ];
+            nixos.imports =
+              [ ./hosts/pc-1/configuration.nix ./modules/desktop/obs.nix ];
           };
           laptop-t14-g1 = {
             system = "x86_64-linux";
@@ -61,4 +62,3 @@
       };
     };
 }
-
