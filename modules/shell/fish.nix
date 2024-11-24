@@ -1,10 +1,11 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
       tide configure --auto \
-        --style=Rainbow --prompt_colors='True color' --show_time='24-hour format' \
+        --style=Rainbow \
+        --prompt_colors='True color' \
+        --show_time='24-hour format' \
         --rainbow_prompt_separators=Round \
         --powerline_prompt_heads=Round \
         --powerline_prompt_tails=Round \
