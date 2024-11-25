@@ -2,6 +2,7 @@
   imports = [
     ./hardware-configuration.nix
     ./bluetooth.nix
+    ./opencl.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
