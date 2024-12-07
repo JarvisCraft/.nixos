@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  imports = [ ./unfree.nix ];
+  imports = [ ./unfree.nix ./index.nix ];
   nix.settings = {
     sync-before-registering = true;
     system-features = [ "recursive-nix" ];
