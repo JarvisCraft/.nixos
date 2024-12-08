@@ -10,7 +10,7 @@ in {
       window.startup_mode = "Maximized";
       font = {
         normal = {
-          family = "MesloLGS NF";
+          family = "MesloLGS Nerd Font";
           style = "Regular";
         };
         size = 14;

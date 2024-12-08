@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   fonts.packages = with pkgs; [
-    meslo-lgs-nf
+    nerd-fonts.meslo-lg
     jetbrains-mono
     corefonts
     vistafonts
