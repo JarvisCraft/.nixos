@@ -5,6 +5,7 @@
     ./security
     ./git
     ./direnv
+    ./pjnvim
     ./users
     ./fonts
     ./shell

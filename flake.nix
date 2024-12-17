@@ -18,38 +18,54 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs@{ nixpkgs, nixos-hardware, flake-parts, fleet, pjnvim, ... }:
+  outputs =
+    inputs@{
+      nixpkgs,
+      nixos-hardware,
+      flake-parts,
+      fleet,
+      ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       imports = [ fleet.flakeModules.default ];
       systems = [ "x86_64-linux" ];
 
-      perSystem = { pkgs, system, inputs', ... }: {
-        formatter = pkgs.nixfmt-rfc-style;
-        devShells.default =
-          pkgs.mkShell { packages = [ inputs'.fleet.packages.fleet ]; };
-      };
+      perSystem =
+        {
+          pkgs,
+          system,
+          inputs',
+          ...
+        }:
+        {
+          formatter = pkgs.nixfmt-rfc-style;
+          devShells.default = pkgs.mkShell { packages = [ inputs'.fleet.packages.fleet ]; };
+        };
 
       fleetConfigurations.default = {
         nixpkgs.buildUsing = nixpkgs;
 
-        nixos = { inputs, inputs', ... }: {
-          imports = [ ./modules ];
-          environment.systemPackages = [ inputs'.pjnvim.packages.nvim ];
-          nix.registry.nixpkgs = {
-            from = {
-              id = "nixpkgs";
-              type = "indirect";
+        nixos =
+          { inputs, inputs', ... }:
+          {
+            imports = [ ./modules ];
+            nix.registry.nixpkgs = {
+              from = {
+                id = "nixpkgs";
+                type = "indirect";
+              };
+              flake = inputs.nixpkgs;
+              exact = false;
             };
-            flake = inputs.nixpkgs;
-            exact = false;
           };
-        };
 
         hosts = {
           pc-1 = {
             system = "x86_64-linux";
-            nixos.imports =
-              [ ./hosts/pc-1/configuration.nix ./modules/desktop/obs.nix ];
+            nixos.imports = [
+              ./hosts/pc-1/configuration.nix
+              ./modules/desktop/obs.nix
+            ];
           };
           laptop-t14-g1 = {
             system = "x86_64-linux";
