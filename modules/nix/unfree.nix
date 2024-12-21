@@ -6,8 +6,6 @@
       # Drivers
       "nvidia-x11"
       "nvidia-settings"
-      # Office
-      "wpsoffice"
       # Fonts
       "vista-fonts"
       "corefonts"

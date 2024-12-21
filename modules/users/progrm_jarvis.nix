@@ -10,7 +10,6 @@
     packages = with pkgs; [
       firefox
       libreoffice
-      wpsoffice
       prismlauncher
     ];
     shell = pkgs.fish;
