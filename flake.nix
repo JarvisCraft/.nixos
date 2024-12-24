@@ -65,6 +65,7 @@
             nixos.imports = [
               ./hosts/pc-1/configuration.nix
               ./modules/desktop/obs.nix
+              ./modules/virtualisation/virtualbox.nix
             ];
           };
           laptop-t14-g1 = {

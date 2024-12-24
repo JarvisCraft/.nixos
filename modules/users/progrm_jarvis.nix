@@ -6,6 +6,7 @@
     extraGroups = [
       "wheel"
       "docker"
+      "vboxusers"
     ];
     packages = with pkgs; [
       firefox
