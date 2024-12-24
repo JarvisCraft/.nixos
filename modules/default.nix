@@ -19,6 +19,7 @@
     ./controls
     ./sound
     ./media
+    ./web
     ./development
     ./virtualisation
     ./work

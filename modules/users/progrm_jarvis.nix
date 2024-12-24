@@ -9,7 +9,6 @@
       "vboxusers"
     ];
     packages = with pkgs; [
-      firefox
       libreoffice
       prismlauncher
     ];
