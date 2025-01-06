@@ -23,5 +23,6 @@
     ./development
     ./virtualisation
     ./work
+    ./torrent
   ];
 }
