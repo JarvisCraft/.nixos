@@ -13,6 +13,8 @@
       "discord"
       "chatzone-desktop"
       # Development
+      "typora"
+      "wpsoffice"
       "lens-desktop"
     ];
 }

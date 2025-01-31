@@ -1,4 +1,8 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.neovide ];
+  environment.systemPackages = [
+    pkgs.neovide
+    pkgs.typora
+    pkgs.wpsoffice
+  ];
 }
