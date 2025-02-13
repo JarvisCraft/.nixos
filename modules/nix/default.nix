@@ -5,7 +5,7 @@
     ./index.nix
   ];
   nix = {
-    package = pkgs.nixVersions.nix_2_25;
+    package = pkgs.nixVersions.nix_2_26;
     settings = {
       sync-before-registering = true;
       system-features = [ "recursive-nix" ];
