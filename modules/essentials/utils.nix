@@ -3,6 +3,7 @@
   environment.systemPackages = with pkgs; [
     zip
     unzip
+    rar
     fd
     killall
     usbutils

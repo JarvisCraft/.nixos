@@ -3,6 +3,8 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      # Essentials
+      "rar"
       # Drivers
       "nvidia-x11"
       "nvidia-settings"
