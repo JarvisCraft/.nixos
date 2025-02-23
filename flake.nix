@@ -39,7 +39,7 @@
         }:
         {
           formatter = pkgs.nixfmt-rfc-style;
-          devShells.default = pkgs.mkShell { packages = [ inputs'.fleet.packages.fleet ]; };
+          devShells.default = pkgs.mkShellNoCC { packages = [ inputs'.fleet.packages.fleet ]; };
         };
 
       fleetConfigurations.default = {
