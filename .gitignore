@@ -1,3 +1,4 @@
 .direnv
 built-*
 result
+.pre-commit-config.yaml
