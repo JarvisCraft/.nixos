@@ -33,7 +33,6 @@
       perSystem =
         {
           pkgs,
-          system,
           inputs',
           ...
         }:
@@ -46,7 +45,7 @@
         nixpkgs.buildUsing = nixpkgs;
 
         nixos =
-          { inputs, inputs', ... }:
+          { inputs, ... }:
           {
             imports = [ ./modules ];
             nix.registry.nixpkgs = {
