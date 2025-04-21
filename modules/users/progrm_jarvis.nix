@@ -1,6 +1,9 @@
 { pkgs, ... }:
+let
+  username = "progrm_jarvis";
+in
 {
-  users.users.progrm_jarvis = {
+  users.users.${username} = {
     isNormalUser = true;
     description = "Petr Portnov";
     extraGroups = [
@@ -22,5 +25,10 @@
     name = "Petr Portnov";
     email = "mrjarviscraft@gmail.com";
     signingkey = "11922217F8288484";
+  };
+
+  security.pam.services.${username}.kwallet = {
+    enable = true;
+    package = pkgs.kdePackages.kwallet-pam;
   };
 }
