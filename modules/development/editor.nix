@@ -4,5 +4,6 @@
     pkgs.neovide
     pkgs.typora
     pkgs.wpsoffice
+    pkgs.pandoc
   ];
 }
