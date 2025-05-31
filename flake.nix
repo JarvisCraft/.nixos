@@ -65,6 +65,7 @@
               ./hosts/pc-1/configuration.nix
               ./modules/desktop/obs.nix
               ./modules/virtualisation/virtualbox.nix
+              ./modules/steam
             ];
           };
           laptop-t14-g1 = {

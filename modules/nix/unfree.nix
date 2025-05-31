@@ -18,5 +18,10 @@
       "typora"
       "wpsoffice"
       "lens-desktop"
+      # Steam
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
     ];
 }
