@@ -1,6 +1,8 @@
 { pkgs, ... }:
-let toml = pkgs.formats.toml { };
-in {
+let
+  toml = pkgs.formats.toml { };
+in
+{
   environment = {
     systemPackages = with pkgs; [ alacritty ];
 

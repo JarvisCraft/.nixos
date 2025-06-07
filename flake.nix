@@ -15,6 +15,14 @@
     };
     pjnvim = {
       url = "github:JarvisCraft/pjnvim";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-parts.follows = "flake-parts";
+        git-hooks.follows = "git-hooks";
+      };
+    };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -27,18 +35,50 @@
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [ fleet.flakeModules.default ];
+      imports = [
+        inputs.fleet.flakeModules.default
+        inputs.git-hooks.flakeModule
+      ];
       systems = [ "x86_64-linux" ];
 
       perSystem =
         {
           pkgs,
+          config,
           inputs',
           ...
         }:
         {
           formatter = pkgs.nixfmt-rfc-style;
-          devShells.default = pkgs.mkShellNoCC { packages = [ inputs'.fleet.packages.fleet ]; };
+          devShells.default = pkgs.mkShellNoCC {
+            shellHook = config.pre-commit.installationScript;
+            packages = [ inputs'.fleet.packages.fleet ];
+          };
+          pre-commit.settings.hooks =
+            let
+              generatedNixFiles = [
+                "fleet.nix"
+                "hosts/pc-1/hardware-configuration.nix"
+                "hosts/laptop-t14-g1/hardware-configuration.nix"
+              ];
+            in
+            {
+              nixfmt-rfc-style = {
+                enable = true;
+                excludes = generatedNixFiles;
+              };
+              nil.enable = true;
+              statix = {
+                enable = true;
+                settings.ignore = generatedNixFiles;
+              };
+              flake-checker.enable = true;
+              deadnix = {
+                enable = true;
+                # `settings.exclude` does not work.
+                excludes = [ "hardware-configuration.nix" ];
+              };
+            };
         };
 
       fleetConfigurations.default = {
