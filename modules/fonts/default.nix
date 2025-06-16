@@ -5,5 +5,6 @@
     jetbrains-mono
     corefonts
     vistafonts
+    google-fonts
   ];
 }
