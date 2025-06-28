@@ -12,7 +12,6 @@
       "vista-fonts"
       "corefonts"
       # Messaging
-      "discord"
       "chatzone-desktop"
       # Development
       "typora"
@@ -23,5 +22,7 @@
       "steam-original"
       "steam-unwrapped"
       "steam-run"
+      # Misc
+      "via"
     ];
 }
