@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     imagemagick
-    gimp
+    gimp3
     audacity
   ];
 }
