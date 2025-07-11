@@ -103,6 +103,8 @@
             system = "x86_64-linux";
             nixos.imports = [
               ./hosts/pc-1/configuration.nix
+              nixos-hardware.nixosModules.common-cpu-intel
+              nixos-hardware.nixosModules.common-pc-ssd
               ./modules/desktop/obs.nix
               ./modules/virtualisation/virtualbox.nix
               ./modules/steam
