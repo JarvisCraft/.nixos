@@ -83,15 +83,15 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1751140531,
-        "narHash": "sha256-OgH+urlOtcd5Lx0LYDvdyDnLok9w59P5JIdhZ0v358A=",
-        "owner": "CertainLach",
+        "lastModified": 1752784407,
+        "narHash": "sha256-SBtnrx3v2+LgjXgy0/NQFL8hlH3m1DES8C9m+KN3Yvc=",
+        "owner": "deltarocks",
         "repo": "fleet",
-        "rev": "94ece5cae749cba27af413e9cef99b80cb5b1dd1",
+        "rev": "c6d548433a70c44ddd9a38f133b0cd93174d8304",
         "type": "github"
       },
       "original": {
-        "owner": "CertainLach",
+        "owner": "deltarocks",
         "repo": "fleet",
         "type": "github"
       }

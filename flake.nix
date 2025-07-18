@@ -7,7 +7,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     fleet = {
-      url = "github:CertainLach/fleet";
+      url = "github:deltarocks/fleet";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
