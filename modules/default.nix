@@ -2,6 +2,7 @@
   imports = [
     ./nix
     ./hardware
+    ./boot
     ./security
     ./git
     ./direnv

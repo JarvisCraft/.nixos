@@ -83,11 +83,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1752784407,
-        "narHash": "sha256-SBtnrx3v2+LgjXgy0/NQFL8hlH3m1DES8C9m+KN3Yvc=",
+        "lastModified": 1752850831,
+        "narHash": "sha256-zxSFuBAUBGeDrIxBVXC+8ICrrQ6xcM1OPZ9FkO9l+C8=",
         "owner": "deltarocks",
         "repo": "fleet",
-        "rev": "c6d548433a70c44ddd9a38f133b0cd93174d8304",
+        "rev": "34f0c725e4c0374a6cd92721ca21dc744446c7fd",
         "type": "github"
       },
       "original": {
