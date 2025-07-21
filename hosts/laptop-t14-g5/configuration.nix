@@ -5,7 +5,7 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "laptop-t14-g1";
+  networking.hostName = "laptop-t14-g5";
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
