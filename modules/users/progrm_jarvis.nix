@@ -21,6 +21,8 @@ in
     ];
   };
 
+  nix.settings.trusted-users = [ username ];
+
   programs.git.config.user = {
     name = "Petr Portnov";
     email = "mrjarviscraft@gmail.com";
