@@ -24,5 +24,7 @@
       "steam-run"
       # Misc
       "via"
+      # Drivers
+      "mfcl2720dwlpr"
     ];
 }
