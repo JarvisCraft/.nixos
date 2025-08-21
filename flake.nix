@@ -59,7 +59,6 @@
               generatedNixFiles = [
                 "fleet.nix"
                 "hosts/pc-1/hardware-configuration.nix"
-                "hosts/laptop-t14-g1/hardware-configuration.nix"
                 "hosts/laptop-t14-g5/hardware-configuration.nix"
               ];
             in
@@ -109,13 +108,6 @@
               ./modules/desktop/obs.nix
               ./modules/virtualisation/virtualbox.nix
               ./modules/steam
-            ];
-          };
-          laptop-t14-g1 = {
-            system = "x86_64-linux";
-            nixos.imports = [
-              ./hosts/laptop-t14-g1/configuration.nix
-              nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen1
             ];
           };
           laptop-t14-g5 = {
