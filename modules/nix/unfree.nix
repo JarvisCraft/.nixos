@@ -15,7 +15,7 @@
       "chatzone-desktop"
       # Development
       "typora"
-      "wpsoffice"
+      "wpsoffice-cn"
       "lens-desktop"
       # Steam
       "steam"

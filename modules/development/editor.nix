@@ -3,7 +3,7 @@
   environment.systemPackages = [
     pkgs.neovide
     pkgs.typora
-    pkgs.wpsoffice
+    pkgs.wpsoffice-cn
     pkgs.pandoc
   ];
 }
