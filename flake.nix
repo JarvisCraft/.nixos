@@ -31,7 +31,6 @@
       nixpkgs,
       nixos-hardware,
       flake-parts,
-      fleet,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -49,7 +48,7 @@
           ...
         }:
         {
-          formatter = pkgs.nixfmt-rfc-style;
+          formatter = pkgs.nixfmt;
           devShells.default = pkgs.mkShellNoCC {
             shellHook = config.pre-commit.installationScript;
             packages = [ inputs'.fleet.packages.fleet ];
