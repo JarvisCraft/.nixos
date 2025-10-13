@@ -13,6 +13,7 @@
       "corefonts"
       # Messaging
       "chatzone-desktop"
+      "zoom"
       # Development
       "typora"
       "wpsoffice-cn"
