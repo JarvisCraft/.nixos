@@ -4,7 +4,7 @@
     nerd-fonts.meslo-lg
     jetbrains-mono
     corefonts
-    vistafonts
+    vista-fonts
     google-fonts
   ];
 }

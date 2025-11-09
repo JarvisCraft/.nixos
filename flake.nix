@@ -7,7 +7,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     fleet = {
-      url = "github:deltarocks/fleet";
+      url = "github:deltarocks/fleet/stable-rust";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
