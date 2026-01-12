@@ -10,6 +10,8 @@ in
       "wheel"
       "docker"
       "vboxusers"
+      "tty"
+      "dialout"
     ];
     packages = with pkgs; [
       libreoffice
