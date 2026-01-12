@@ -62,7 +62,7 @@
               ];
             in
             {
-              nixfmt-rfc-style = {
+              nixfmt = {
                 enable = true;
                 excludes = generatedNixFiles;
               };
