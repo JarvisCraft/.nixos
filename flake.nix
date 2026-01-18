@@ -101,9 +101,10 @@
           pc-1 = {
             system = "x86_64-linux";
             nixos.imports = [
-              ./hosts/pc-1/configuration.nix
+              ./hosts/pc-1
               nixos-hardware.nixosModules.common-cpu-intel
               nixos-hardware.nixosModules.common-pc-ssd
+
               ./modules/desktop/obs.nix
               ./modules/virtualisation/virtualbox.nix
               ./modules/steam
@@ -112,7 +113,7 @@
           laptop-t14-g5 = {
             system = "x86_64-linux";
             nixos.imports = [
-              ./hosts/laptop-t14-g5/configuration.nix
+              ./hosts/laptop-t14-g5
               nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen5
             ];
           };
