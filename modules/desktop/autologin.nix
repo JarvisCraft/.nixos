@@ -1,6 +1,7 @@
+{ config, ... }:
 {
   services.displayManager.autoLogin = {
     enable = true;
-    user = "progrm_jarvis";
+    user = config.progrm_jarvis.username;
   };
 }

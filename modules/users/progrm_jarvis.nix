@@ -13,10 +13,6 @@ in
       "tty"
       "dialout"
     ];
-    packages = with pkgs; [
-      libreoffice
-      prismlauncher
-    ];
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBqwhIGYMJynS7sLGUhV8Q0lD4j8tjUMBP9oXUHx3g90 openpgp:0x7C00EA6A"

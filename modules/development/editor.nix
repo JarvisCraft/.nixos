@@ -1,9 +1,10 @@
 { pkgs, ... }:
 {
-  environment.systemPackages = [
-    pkgs.neovide
-    pkgs.typora
-    pkgs.wpsoffice-cn
-    pkgs.pandoc
+  environment.systemPackages = with pkgs; [
+    neovide
+    typora
+    libreoffice
+    wpsoffice-cn
+    pandoc
   ];
 }

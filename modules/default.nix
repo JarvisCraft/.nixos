@@ -1,4 +1,13 @@
+{ lib, ... }:
 {
+  options.progrm_jarvis.username = lib.mkOption {
+    default = "progrm_jarvis";
+    type = lib.types.str;
+    description = ''
+      Primary system username.
+    '';
+  };
+
   imports = [
     ./nix
     ./hardware

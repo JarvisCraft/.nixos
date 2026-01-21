@@ -104,10 +104,6 @@
               ./hosts/pc-1
               nixos-hardware.nixosModules.common-cpu-intel
               nixos-hardware.nixosModules.common-pc-ssd
-
-              ./modules/desktop/obs.nix
-              ./modules/virtualisation/virtualbox.nix
-              ./modules/steam
             ];
           };
           laptop-t14-g5 = {

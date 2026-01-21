@@ -1,1 +1,3 @@
-{ imports = [ ./progrm_jarvis.nix ]; }
+{
+  imports = [ ./progrm_jarvis.nix ];
+}

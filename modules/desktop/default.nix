@@ -4,5 +4,6 @@
     ./plasma.nix
     ./clipboard.nix
     ./autologin.nix
+    ./obs.nix
   ];
 }
