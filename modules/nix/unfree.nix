@@ -18,7 +18,6 @@
         # Development
         "typora"
         "wpsoffice-cn"
-        "lens-desktop"
         # Steam
         "steam"
         "steam-original"
