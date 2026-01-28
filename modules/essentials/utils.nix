@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  programs.bat = {
+    enable = true;
+    settings.theme = "gruvbox-dark";
+  };
+
   environment.systemPackages = with pkgs; [
     zip
     unzip
@@ -7,7 +12,6 @@
     fd
     killall
     usbutils
-    bat
     btop
     zenith
     eza
