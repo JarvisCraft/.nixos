@@ -20,4 +20,6 @@
     rsync
     zellij
   ];
+
+  environment.shellAliases.ls = "eza";
 }
