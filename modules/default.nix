@@ -33,6 +33,7 @@
     ./development
     ./virtualisation
     ./work
+    ./games
     ./torrent
   ];
 }
