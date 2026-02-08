@@ -15,15 +15,11 @@
       stlink
       stlink-gui
       stlink-tool
-      nrf-command-line-tools
-      segger-jlink
     ];
 
     nixpkgs.config = {
-      segger-jlink.acceptLicense = true;
       permittedInsecurePackages = [
         "python3.13-ecdsa-0.19.1"
-        "segger-jlink-qt4-874"
       ];
     };
   };

@@ -29,9 +29,6 @@
       # Drivers
       "mfcl2720dwlpr"
       # Embedded development
-      "nrf-command-line-tools"
-      "segger-jlink"
-      "segger-jlink-qt4-874"
       "adafruit-nrfutil"
     ];
 }
