@@ -97,7 +97,7 @@
             };
           };
 
-        hosts = {
+        hosts = rec {
           pc-1 = {
             system = "x86_64-linux";
             nixos.imports = [
@@ -113,6 +113,7 @@
               nixos-hardware.nixosModules.lenovo-thinkpad-t14-amd-gen5
             ];
           };
+          linuxnb-pportnov-PF5922RD = laptop-t14-g5;
         };
       };
     };

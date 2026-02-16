@@ -5,7 +5,7 @@
   ];
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.hostName = "laptop-t14-g5";
+  networking.hostName = "linuxnb-pportnov-PF5922RD";
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
