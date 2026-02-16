@@ -3,6 +3,8 @@
   nixpkgs.config.allowUnfreePredicate =
     pkg:
     builtins.elem (lib.getName pkg) [
+      # Web
+      "google-chrome"
       # Essentials
       "rar"
       # Drivers
