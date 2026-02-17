@@ -16,6 +16,8 @@
       # Messaging
       "chatzone-desktop"
       "zoom"
+      # Gaming
+      "discord"
       # Development
       "typora"
       "wpsoffice-cn"

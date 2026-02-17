@@ -5,5 +5,6 @@
   imports = [
     ./steam.nix
     ./minecraft.nix
+    ./discord.nix
   ];
 }
