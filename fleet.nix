@@ -3,8 +3,9 @@
 {
   version = "0.1.0";
   gcRootPrefix = "fleet-gc-YqamBlht";
-  managerKeys = [ ];
   hosts = { };
+  secrets = { };
+  extra = { };
 }
 
 # vim: ts=2 et nowrap
