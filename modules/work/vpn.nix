@@ -4,6 +4,13 @@
   xdg.portal.enable = true;
   environment.systemPackages = [ pkgs.xdg-dbus-proxy ];
   systemd.services.flatpak-repo = {
+    wants = [
+      "network-online.target"
+      "nss-lookup.target"
+    ];
+    before = [
+      "nss-lookup.target"
+    ];
     wantedBy = [ "multi-user.target" ];
     path = [ pkgs.flatpak ];
     script = ''
