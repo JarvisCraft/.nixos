@@ -3,7 +3,8 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      tide configure --auto \
+      tide configure \
+        --auto \
         --style=Rainbow \
         --prompt_colors='True color' \
         --show_time='24-hour format' \
@@ -14,7 +15,8 @@
         --prompt_connection=Solid \
         --powerline_right_prompt_frame=No \
         --prompt_connection_andor_frame_color=Dark \
-        --prompt_spacing=Sparse --icons='Many icons' \
+        --prompt_spacing=Sparse \
+        --icons='Many icons' \
         --transient=No
     '';
   };
