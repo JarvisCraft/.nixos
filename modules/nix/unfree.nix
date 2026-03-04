@@ -10,6 +10,8 @@
       # Drivers
       "nvidia-x11"
       "nvidia-settings"
+      # Editing
+      "ffmpeg-full"
       # Fonts
       "vista-fonts"
       "corefonts"
