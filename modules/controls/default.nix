@@ -1,6 +1,6 @@
 {
   imports = [
-    ./via.nix
+    ./keyboards.nix
     ./logitech.nix
   ];
 }
