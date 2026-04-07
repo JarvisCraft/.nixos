@@ -3,5 +3,6 @@
     embedded = true;
     games = true;
     virtualbox = true;
+    ffmpeg-unfree = true;
   };
 }

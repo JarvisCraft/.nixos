@@ -1,10 +1,21 @@
-{ pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
+  lib,
+  pkgs,
+  config,
+  ...
+}:
+{
+  options.progrm_jarvis.ffmpeg-unfree = lib.mkEnableOption {
+    type = lib.types.bool;
+    default = false;
+    description = "Whether to enable unfree ffmpeg components";
+  };
+
+  config.environment.systemPackages = with pkgs; [
     imagemagick
     gimp3
     pinta
     audacity
-    (pkgs.ffmpeg-full.override { withUnfree = true; })
+    (ffmpeg-full.override { withUnfree = config.progrm_jarvis.ffmpeg-unfree; })
   ];
 }
