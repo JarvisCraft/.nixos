@@ -32,7 +32,5 @@
       "via"
       # Drivers
       "mfcl2720dwlpr"
-      # Embedded development
-      "adafruit-nrfutil"
     ];
 }
