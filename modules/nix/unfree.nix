@@ -32,5 +32,7 @@
       "via"
       # Drivers
       "mfcl2720dwlpr"
+      # Nvidia
+      "nvidia-kernel-modules"
     ];
 }
