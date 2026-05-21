@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   imports = [
     ./unfree.nix
@@ -20,4 +21,5 @@
       auto-optimise-store = true;
     };
   };
+  environment.systemPackages = [ pkgs.nvd ];
 }
