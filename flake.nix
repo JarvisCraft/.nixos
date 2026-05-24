@@ -7,7 +7,7 @@
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
     fleet = {
-      url = "github:deltarocks/fleet/push-xzkurnmtrspn";
+      url = "github:deltarocks/fleet";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

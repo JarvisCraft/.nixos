@@ -31,7 +31,7 @@
       "steam-run"
       # Misc
       "via"
-      # Drivers
+      # Printing
       "mfcl2720dwlpr"
       # Jetbrains
       # Temporary until `idea-oss` builds are updated to 2026.x
