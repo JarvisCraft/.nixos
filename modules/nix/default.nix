@@ -2,6 +2,7 @@
 {
   imports = [
     ./unfree.nix
+    ./substituters.nix
     ./index.nix
   ];
   nix = {
