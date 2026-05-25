@@ -20,6 +20,7 @@
       ];
       use-cgroups = true;
       auto-optimise-store = true;
+      flake-registry = "";
     };
   };
   environment.systemPackages = [ pkgs.nvd ];
