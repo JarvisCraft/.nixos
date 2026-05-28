@@ -6,8 +6,9 @@
     fallback = true;
 
     substituters = [
-      # Mirror of cache.nixos.org
+      # Mirrors of cache.nixos.org
       "https://mirror.yandex.ru/nixos"
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://nix-community.cachix.org"
     ];
 
