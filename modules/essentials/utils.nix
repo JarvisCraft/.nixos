@@ -20,6 +20,7 @@
     rsync
     zellij
     ripdrag
+    binutils
   ];
 
   environment.shellAliases.ls = "eza";
