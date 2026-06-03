@@ -7,9 +7,10 @@
       "google-chrome"
       # Essentials
       "rar"
-      # Drivers
+      # GPU
       "nvidia-x11"
       "nvidia-settings"
+      "nvidia-kernel-modules"
       # Editing
       "ffmpeg-full"
       # Fonts
@@ -32,7 +33,8 @@
       "via"
       # Drivers
       "mfcl2720dwlpr"
-      # Nvidia
-      "nvidia-kernel-modules"
+      # Jetbrains
+      # Temporary until `idea-oss` builds are updated to 2026.x
+      "idea"
     ];
 }

@@ -1,4 +1,4 @@
 { pkgs, ... }:
 {
-  environment.defaultPackages = [ pkgs.jetbrains.idea-oss ];
+  environment.defaultPackages = [ pkgs.jetbrains.idea ];
 }
